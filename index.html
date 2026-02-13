@@ -1,247 +1,336 @@
 <!doctype html>
-<html lang="fa">
+<html lang="fa-AF" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ahmad Walid</title>
+  <title>دانشنامه اسلامی</title>
+  <meta name="description" content="وب‌سایت دری برای موضوعات اسلامی — بخش‌بخش، ساده و قابل فهم" />
+
   <style>
     :root{
-      --bg:#f0e7da;      /* مثل رنگ کرمی */
-      --text:#1a1a1a;
-      --muted:#5b5b5b;
-      --dark:#2f2a24;    /* دکمه‌های پایین */
-      --dark2:#3b342d;
-      --radius:18px;
+      --bg:#0b0b0f;
+      --panel:#111117;
+      --stroke:rgba(255,255,255,.10);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --gold:#f5d77a;
+      --gold2:#e9c46a;
+      --r:18px;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:var(--bg);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(245,215,122,.12), transparent 60%),
+        radial-gradient(900px 500px at 100% 10%, rgba(120,200,255,.08), transparent 55%),
+        var(--bg);
       color:var(--text);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height:1.95;
     }
-
-    /* Top bar */
-    .top{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(240,231,218,.92);
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto;padding:18px 16px 72px}
+    .card{
+      background:var(--panel);
+      border:1px solid var(--stroke);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    /* NAV */
+    .nav{
+      position:sticky; top:0; z-index:30;
+      background:rgba(11,11,15,.82);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.08);
-      padding: 10px 14px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .navin{
+      max-width:1050px;
+      margin:0 auto;
+      padding:12px 16px;
       display:flex;
+      gap:12px;
       align-items:center;
       justify-content:space-between;
-      gap:10px;
     }
     .brand{
+      font-weight:900;
+      letter-spacing:.3px;
+      color:var(--gold);
       display:flex; align-items:center; gap:10px;
-      font-weight:900;
-      letter-spacing:.4px;
+      white-space:nowrap;
     }
-    .logo{
-      width:34px; height:34px; border-radius:12px;
-      background:#fff;
-      border:1px solid rgba(0,0,0,.10);
-      display:grid; place-items:center;
+    .badge{
+      width:36px;height:36px;border-radius:12px;
+      display:grid;place-items:center;
+      border:1px solid rgba(245,215,122,.28);
+      background:rgba(245,215,122,.10);
+      color:var(--gold);
       font-weight:900;
     }
-    .icons{
-      display:flex; gap:10px; align-items:center;
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:10px;
+    }
+    .links a{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
       color:var(--muted);
-      font-size:18px;
-      user-select:none;
+      font-size:14px;
     }
-
-    /* Hero image section */
-    .hero{
-      position:relative;
-      height: 52vh;
-      min-height: 360px;
-      background:#000;
-      overflow:hidden;
-    }
-    .hero img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      filter: contrast(1.02) saturate(1.05);
-      transform: scale(1.02);
-    }
-    .overlay{
-      position:absolute; inset:0;
-      background: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.15) 55%, rgba(0,0,0,.05));
-    }
-    .heroText{
-      position:absolute;
-      left:16px; right:16px; bottom:18px;
-      color:#fff;
-      text-align:center;
-    }
-    .heroText h1{
-      margin:0;
-      font-size:40px;
-      letter-spacing:.6px;
-      text-shadow: 0 10px 30px rgba(0,0,0,.45);
-    }
-    .heroText p{
-      margin:10px 0 0;
-      color: rgba(255,255,255,.85);
-      line-height:1.6;
-      text-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-
-    /* Content section like “Our Location” */
-    .section{
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 24px 16px 120px;
-      text-align:center;
-    }
-    .title{
-      margin: 14px 0 0;
-      font-size: 28px;
-      letter-spacing: .5px;
-      color: #2f2a24;
-    }
-    .subtitle{
-      margin: 10px 0 0;
-      font-size: 18px;
-      letter-spacing: 2px;
-      color: #6b6157;
-      text-transform: uppercase;
-    }
-    .box{
-      margin: 14px auto 0;
-      max-width: 520px;
-      padding: 16px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.45);
-      border: 1px solid rgba(0,0,0,.08);
-    }
-    .addr{
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 16px;
-    }
-    .phone{
-      margin: 12px 0 0;
-      font-size: 22px;
-      font-weight: 900;
-      color: #1a1a1a;
-    }
-
-    /* gallery row */
-    .gallery{
-      margin-top: 18px;
+    .links a:hover{border-color:rgba(245,215,122,.35);color:var(--text)}
+    /* Sections */
+    h1,h2{margin:0 0 10px}
+    h1{color:var(--gold);font-size:30px}
+    h2{color:var(--gold2);font-size:20px;margin-top:4px}
+    p{margin:0;color:var(--muted)}
+    .small{font-size:13px;color:rgba(255,255,255,.55)}
+    hr{border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0}
+    ul{margin:10px 0 0;padding:0 20px}
+    li{margin:6px 0;color:var(--muted)}
+    .grid{
+      margin-top:14px;
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
     }
-    @media (max-width:720px){
-      .gallery{grid-template-columns:1fr}
-    }
-    .shot{
-      border-radius: var(--radius);
-      overflow:hidden;
-      border: 1px solid rgba(0,0,0,.08);
-      background:#fff;
-      aspect-ratio: 4 / 3;
-    }
-    .shot img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    /* bottom buttons like the sample site */
-    .bottomBar{
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 14px;
-      z-index: 60;
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-    }
+    @media(max-width:820px){.grid{grid-template-columns:1fr}}
+    .tile h3{margin:0 0 6px;color:var(--gold2);font-size:18px}
+    .tile p{margin:0}
+    .btns{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
     .btn{
-      padding: 14px 10px;
-      border-radius: 999px;
-      background: var(--dark);
-      color: #fff;
-      text-align:center;
-      font-weight: 800;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 18px 40px rgba(0,0,0,.25);
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:800;
+      font-size:14px;
     }
-    .btn:active{transform: translateY(1px)}
-    .btn.secondary{background: var(--dark2)}
-    .hint{
-      margin-top: 14px;
-      font-size: 13px;
-      color: #6b6157;
-      line-height: 1.6;
+    .btn.primary{
+      border-color:rgba(245,215,122,.35);
+      background:rgba(245,215,122,.12);
+    }
+    .section{margin-top:14px}
+    .foot{
+      margin-top:16px;
+      text-align:center;
+      color:rgba(255,255,255,.55);
+      font-size:13px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    /* Optional image style */
+    .heroimg{
+      width:100%;
+      max-width:900px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      display:block;
+      margin:14px auto 0;
+      object-fit:cover;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="top">
-    <div class="brand">
-      <div class="logo">AW</div>
-      <div>Ahmad Walid</div>
-    </div>
-    <div class="icons" title="Menu">
-      <span>👤</span>
-      <span>≡</span>
-    </div>
+<header class="nav">
+  <div class="navin">
+    <div class="brand"><div class="badge">IS</div> دانشنامه اسلامی</div>
+    <nav class="links">
+      <a href="#home">خانه</a>
+      <a href="#topics">موضوعات</a>
+      <a href="#quran">قرآن</a>
+      <a href="#hadith">حدیث</a>
+      <a href="#akhlaq">اخلاق</a>
+      <a href="#seerah">سیرت</a>
+      <a href="#dua">دعا</a>
+      <a href="#faq">پرسش‌ها</a>
+      <a href="#sources">منابع</a>
+      <a href="#contact">تماس</a>
+    </nav>
   </div>
+</header>
 
-  <!-- عکس بزرگ بالا -->
-  <section class="hero">
-    <!-- اگر این عکس مناسب نبود، می‌تونی -6.jpg را بذاری -->
-    <img src="-3.jpg" alt="Hero photo">
-    <div class="overlay"></div>
-    <div class="heroText">
-      <h1>Welcome</h1>
-      <p>این وب‌سایت شخصی من است — داستان، هدف‌ها و عکس‌ها</p>
+<main class="wrap">
+
+  <!-- HOME -->
+  <section id="home" class="card">
+    <h1>خلاصه، مرتب و قابل فهم</h1>
+    <p>
+      این وب‌سایت برای موضوعات اسلامی به زبان دری ساخته شده است.
+      هدف این است که مطالب به صورت ساده، روشن و دسته‌بندی‌شده ارائه شود.
+    </p>
+
+    <!-- اگر عکس می‌خواهی، نام عکس را در src بگذار -->
+    <!-- مثال: <img class="heroimg" src="mosque.jpg" alt="مسجد"> -->
+
+    <div class="btns">
+      <a class="btn primary" href="#topics">شروع مطالعه</a>
+      <a class="btn" href="#akhlaq">اخلاق اسلامی</a>
+      <a class="btn" href="#quran">موضوعات قرآنی</a>
+    </div>
+
+    <hr>
+    <p class="small">
+      یادآوری: این سایت جای فتوا نیست. برای مسائل تخصصی دینی، با عالم معتبر و مسجد/مرکز اسلامی مشورت کنید.
+    </p>
+  </section>
+
+  <!-- TOPICS -->
+  <section id="topics" class="card section">
+    <h2>فهرست بخش‌ها</h2>
+    <p>برای رفتن به هر بخش، از منو بالا استفاده کنید.</p>
+    <div class="grid">
+      <a class="card tile" href="#quran"><h3>قرآن</h3><p>آیات منتخب و موضوعات مهم.</p></a>
+      <a class="card tile" href="#hadith"><h3>حدیث</h3><p>حدیث‌های منتخب و درس‌های عملی.</p></a>
+      <a class="card tile" href="#akhlaq"><h3>اخلاق اسلامی</h3><p>رفتار نیک، احترام و مسئولیت.</p></a>
+      <a class="card tile" href="#seerah"><h3>سیرت پیامبر ﷺ</h3><p>درس‌هایی از زندگی پیامبر ﷺ.</p></a>
+      <a class="card tile" href="#dua"><h3>دعا</h3><p>دعاهای مهم و معناهای کوتاه.</p></a>
+      <a class="card tile" href="#faq"><h3>پرسش‌های رایج</h3><p>پاسخ‌های خلاصه و عمومی.</p></a>
     </div>
   </section>
 
-  <main class="section">
-    <div class="title">About Me</div>
-    <div class="subtitle">AHMAD WALID</div>
-
-    <div class="box">
-      <p class="addr">
-        من از افغانستان هستم و در آمریکا زندگی می‌کنم.<br/>
-        هدفم ساختن آینده قوی و موفق است.
-      </p>
-      <div class="phone">Instagram: @yourusername</div>
-    </div>
-
-    <div class="gallery">
-      <div class="shot"><img src="-3.jpg" alt="photo 1"></div>
-      <div class="shot"><img src="-6.jpg" alt="photo 2"></div>
-    </div>
-
-    <p class="hint">
-      اگر عکس‌ها باز هم نیامد، یعنی GitHub Pages هنوز آپدیت نشده یا اسم فایل‌ها فرق دارد.
-      (اما با -3.jpg و -6.jpg باید بیاید چون همین‌ها داخل Repo تو هستند)
+  <!-- QURAN -->
+  <section id="quran" class="card section">
+    <h2>قرآن</h2>
+    <p>در این بخش، موضوعات قرآنی به صورت کوتاه معرفی می‌شود.</p>
+    <hr>
+    <h2>موضوعات پیشنهادی</h2>
+    <ul>
+      <li>صبر و امید</li>
+      <li>شکرگزاری</li>
+      <li>عدالت و حق‌الناس</li>
+      <li>توبه و بازگشت به سوی خدا</li>
+      <li>اخلاق و رفتار نیک</li>
+    </ul>
+    <hr>
+    <p class="small">
+      اگر می‌خواهید متن آیه‌ها را دقیق نقل کنید، از منبع معتبر استفاده کنید و در بخش «منابع» درج نمایید.
     </p>
-  </main>
+  </section>
 
-  <div class="bottomBar">
-    <a class="btn" href="#top">Home</a>
-    <a class="btn secondary" href="mailto:your@email.com">Email</a>
-    <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-  </div>
+  <!-- HADITH -->
+  <section id="hadith" class="card section">
+    <h2>حدیث</h2>
+    <p>در این بخش، حدیث‌های منتخب با توضیح کوتاه و کاربردی قرار می‌گیرد.</p>
+    <hr>
+    <h2>موضوعات مهم</h2>
+    <ul>
+      <li>نیت و اخلاص</li>
+      <li>راست‌گویی و امانت‌داری</li>
+      <li>صبر و بردباری</li>
+      <li>احترام به والدین</li>
+      <li>کنترل زبان و دوری از غیبت</li>
+    </ul>
+    <p class="small">برای نقل دقیق متن عربی و درجه صحت حدیث، از منابع معتبر استفاده کنید.</p>
+  </section>
+
+  <!-- AKHLAQ -->
+  <section id="akhlaq" class="card section">
+    <h2>اخلاق اسلامی</h2>
+    <p>
+      اخلاق در اسلام تنها یک موضوع نظری نیست؛ یک سبک زندگی است.
+      اخلاق خوب، ایمان را کامل‌تر می‌کند و جامعه را بهتر می‌سازد.
+    </p>
+    <hr>
+    <h2>اصول کلیدی</h2>
+    <ul>
+      <li>راست‌گویی</li>
+      <li>امانت‌داری</li>
+      <li>احترام و مهربانی</li>
+      <li>صبر و بردباری</li>
+      <li>کنترل خشم و زبان</li>
+      <li>کمک به نیازمندان و خدمت به جامعه</li>
+    </ul>
+    <hr>
+    <h2>تمرین عملی</h2>
+    <ul>
+      <li>هر روز حداقل یک کار نیک انجام دهید، حتی اگر کوچک باشد.</li>
+      <li>قبل از سخن گفتن، فکر کنید: آیا این سخن درست و مفید است؟</li>
+      <li>اگر اشتباه کردید، عذرخواهی کنید و جبران نمایید.</li>
+    </ul>
+  </section>
+
+  <!-- SEERAH -->
+  <section id="seerah" class="card section">
+    <h2>سیرت پیامبر اسلام ﷺ</h2>
+    <p>در این بخش، درس‌های اخلاقی و تربیتی از سیرت پیامبر ﷺ به زبان ساده ارائه می‌شود.</p>
+    <hr>
+    <h2>موضوعات پیشنهادی</h2>
+    <ul>
+      <li>رحمت و مهربانی</li>
+      <li>صداقت و اعتماد</li>
+      <li>صبر در سختی‌ها</li>
+      <li>عدالت و انصاف</li>
+      <li>رفتار با خانواده و همسایه</li>
+    </ul>
+  </section>
+
+  <!-- DUA -->
+  <section id="dua" class="card section">
+    <h2>دعا</h2>
+    <p>دعاهای روزمره و نکته‌های کوتاه درباره دعا در این بخش قرار می‌گیرد.</p>
+    <hr>
+    <h2>موضوعات پیشنهادی</h2>
+    <ul>
+      <li>دعا برای آرامش دل</li>
+      <li>دعا برای موفقیت در درس و کار</li>
+      <li>دعا برای والدین</li>
+      <li>دعا در وقت نگرانی و سختی</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="card section">
+    <h2>پرسش‌های رایج</h2>
+    <p>پاسخ‌ها عمومی و خلاصه است. برای مسائل تخصصی با عالم معتبر مشورت کنید.</p>
+    <hr>
+    <h2>اسلام چیست؟</h2>
+    <p>اسلام دین توحید است؛ یعنی باور به یکتایی خداوند و پیروی از پیامبر اسلام ﷺ.</p>
+    <hr>
+    <h2>چرا اخلاق در اسلام مهم است؟</h2>
+    <p>زیرا اخلاق نیک، نشانه ایمان و سبب اصلاح فرد و جامعه است.</p>
+    <hr>
+    <h2>چطور مسلمان بهتر باشیم؟</h2>
+    <p>با یادگیری، عمل به واجبات، دوری از گناه، و داشتن اخلاق خوب مانند صداقت، احترام و کمک به دیگران.</p>
+  </section>
+
+  <!-- SOURCES -->
+  <section id="sources" class="card section">
+    <h2>منابع</h2>
+    <p>در این بخش، منابعی را که برای نقل آیات و احادیث استفاده می‌کنید درج نمایید.</p>
+    <hr>
+    <ul>
+      <li>قرآن کریم (چاپ معتبر یا وب‌سایت معتبر)</li>
+      <li>کتاب‌های حدیث معتبر (با ذکر کتاب/باب/شماره)</li>
+      <li>کتاب‌های سیرت معتبر (با ذکر نویسنده و صفحه)</li>
+    </ul>
+    <p class="small">توصیه: هنگام نقل قول‌ها، دقیق و امانت‌دار باشید.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="card section">
+    <h2>تماس</h2>
+    <p>اگر پیشنهاد یا اصلاح دارید، می‌توانید پیام بفرستید.</p>
+    <hr>
+    <ul>
+      <li>ایمیل: <span class="small">اینجا ایمیل خود را بنویسید</span></li>
+      <li>اینستاگرام: <span class="small">@نام‌کاربری</span></li>
+    </ul>
+    <p class="small">اگر بخش تماس را نمی‌خواهید، می‌توانید آن را حذف کنید.</p>
+  </section>
+
+  <div class="foot">© دانشنامه اسلامی — ساخته شده با GitHub Pages</div>
+
+</main>
 
 </body>
 </html>
