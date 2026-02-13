@@ -1,226 +1,53 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Street Shawarma | Atlanta</title>
-  <meta name="description" content="Street Shawarma — شاورمای تازه و داغ. سفارش سریع در Atlanta/Decatur." />
-
+  <title>Ahmad Walid</title>
   <style>
-    :root{
-      --bg:#000;
-      --card:#0f0f10;
-      --text:#fff;
-      --muted:#c7c7c7;
-      --accent:#ff7a00;
-      --accent2:#ff9a3d;
-      --line:rgba(255,122,0,.25);
-      --shadow:0 18px 60px rgba(0,0,0,.65);
-      --radius:18px;
-      --max:1100px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-      background:
-        radial-gradient(900px 500px at 70% -10%, rgba(255,122,0,.22), transparent 60%),
-        radial-gradient(700px 400px at 10% 0%, rgba(255,154,61,.10), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.8;
-    }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--max);margin:0 auto;padding:20px}
-    .nav{
-      position:sticky;top:0;z-index:50;
-      background:rgba(0,0,0,.6);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(255,122,0,.15);
-    }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px}
-    .logo{
-      width:38px;height:38px;border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),#ffb067);
-      box-shadow:0 10px 25px rgba(255,122,0,.25);
-      display:grid;place-items:center;color:#000;font-weight:900;
-    }
-    .pill{
-      border:1px solid rgba(255,122,0,.22);
-      background:rgba(15,15,16,.65);
-      padding:8px 12px;border-radius:999px;color:var(--muted);
-      font-size:13px
-    }
-
-    .hero{padding:28px 0 8px}
-    .hero-grid{
-      display:grid;gap:18px;align-items:center;
-      grid-template-columns: 1.05fr .95fr;
-    }
-    @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
-
-    .card{
-      background:linear-gradient(180deg, rgba(255,122,0,.08), rgba(15,15,16,.92));
-      border:1px solid rgba(255,122,0,.18);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .hero-card{padding:22px}
-    .kicker{
-      display:inline-flex;gap:8px;align-items:center;
-      color:var(--accent2);
-      font-weight:700;font-size:14px
-    }
-    h1{margin:10px 0 10px;font-size:44px;line-height:1.2}
-    @media (max-width:420px){ h1{font-size:36px} }
-    .sub{color:var(--muted);margin:0 0 18px}
-    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 16px;border-radius:14px;
-      border:1px solid rgba(255,122,0,.25);
-      background:rgba(15,15,16,.75);
-      color:#fff;font-weight:800;
-      transition:.2s transform,.2s background,.2s border;
-    }
-    .btn:hover{transform:translateY(-1px);border-color:rgba(255,122,0,.5)}
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),#ffb067);
-      color:#000;border-color:transparent;
-    }
-    .btn.primary:hover{transform:translateY(-1px) scale(1.01)}
-    .stats{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px
-    }
-    @media (max-width:520px){ .stats{grid-template-columns:1fr} }
-    .stat{
-      background:rgba(0,0,0,.35);
-      border:1px solid rgba(255,122,0,.12);
-      padding:12px;border-radius:14px
-    }
-    .stat b{display:block;color:var(--accent2);font-size:18px}
-    .stat span{color:var(--muted);font-size:13px}
-
-    .hero-img{
-      height:420px;min-height:320px;
-      position:relative;
-      border-radius:var(--radius);
-      overflow:hidden;
-      border:1px solid rgba(255,122,0,.18);
-      box-shadow:var(--shadow);
-      background:#111;
-    }
-    .hero-img img{
-      width:100%;height:100%;object-fit:cover;
-      filter:saturate(1.05) contrast(1.05);
-      transform:scale(1.03);
-    }
-    .badge{
-      position:absolute;left:14px;top:14px;
-      background:rgba(0,0,0,.65);
-      border:1px solid rgba(255,122,0,.25);
-      padding:10px 12px;border-radius:999px;
-      color:#fff;font-weight:800;font-size:13px;
-      backdrop-filter: blur(10px);
-    }
-
-    .section{padding:18px 0}
-    .section h2{margin:0 0 10px;font-size:24px}
-    .grid{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
-    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
-    .menu-item{
-      background:rgba(15,15,16,.78);
-      border:1px solid rgba(255,122,0,.15);
-      border-radius:16px;padding:16px;
-    }
-    .menu-item .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .price{color:var(--accent2);font-weight:900}
-    .menu-item p{color:var(--muted);margin:8px 0 0;font-size:14px}
-
-    .footer{
-      margin-top:20px;
-      border-top:1px solid rgba(255,122,0,.15);
-      color:var(--muted);
-      padding:18px 0 30px;
-      font-size:13px;
-    }
-    .tiny{opacity:.85}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0b0f;color:#fff}
+    .wrap{max-width:900px;margin:0 auto;padding:48px 18px}
+    .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;padding:28px}
+    h1{margin:0 0 8px;font-size:40px}
+    p{line-height:1.6;color:rgba(255,255,255,.85)}
+    .btns a{display:inline-block;margin:10px 10px 0 0;padding:10px 14px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.2);text-decoration:none;color:#fff}
+    .tag{display:inline-block;margin-top:14px;padding:6px 10px;border-radius:999px;
+      background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.25);color:#ffd700}
   </style>
 </head>
-
 <body>
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="logo">SS</div>
-        <div>
-          Street Shawarma<br>
-          <span class="tiny">Atlanta / Decatur</span>
-        </div>
-      </div>
-      <div class="pill">🔥 Fresh • Fast • Halal</div>
-    </div>
-  </div>
-
-  <div class="container hero">
-    <div class="hero-grid">
-      <div class="card hero-card">
-        <div class="kicker">🥙 شاورمای داغ و تازه</div>
-        <h1>Street Shawarma</h1>
-        <p class="sub">سفارش سریع در Atlanta/Decatur — طعم واقعی، سرو تمیز، قیمت مناسب.</p>
-
-        <div class="actions">
-          <!-- شماره خودت را اینجا بگذار -->
-          <a class="btn primary" href="tel:+1XXXXXXXXXX">📞 تماس</a>
-          <a class="btn" href="https://wa.me/1XXXXXXXXXX" target="_blank" rel="noopener">💬 واتساپ</a>
-          <!-- لینک لوکیشن (بعداً عوض می‌کنی) -->
-          <a class="btn" href="https://maps.google.com/?q=Atlanta" target="_blank" rel="noopener">📍 لوکیشن</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat"><b>حلال</b><span>مواد تازه و باکیفیت</span></div>
-          <div class="stat"><b>سریع</b><span>آماده‌سازی فوری</span></div>
-          <div class="stat"><b>خوشمزه</b><span>سس‌های ویژه</span></div>
-        </div>
-      </div>
-
-      <div class="hero-img">
-        <span class="badge">✨ Special Shawarma</span>
-        <!-- عکس را باید با اسم hero.jpg آپلود کرده باشی -->
-        <img src="hero.jpg" alt="Street Shawarma" />
+  <div class="wrap">
+    <div class="card">
+      <h1>Hi, I'm Ahmad 👋</h1>
+      <p>
+        I’m a student and future entrepreneur. I’m building my skills, my mindset, and my future — one step at a time.
+      </p>
+      <span class="tag">Personal Website</span>
+      <div class="btns">
+        <a href="#about">About</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
-  </div>
 
-  <div class="container section">
-    <h2>منوی محبوب</h2>
-    <div class="grid">
-      <div class="menu-item">
-        <div class="top"><b>Chicken Shawarma</b><span class="price">$9.99</span></div>
-        <p>مرغ مزه‌دار، سس مخصوص، سبزیجات تازه.</p>
-      </div>
-      <div class="menu-item">
-        <div class="top"><b>Beef Shawarma</b><span class="price">$10.99</span></div>
-        <p>گوشت نرم، ادویه خاص، طعم قوی.</p>
-      </div>
-      <div class="menu-item">
-        <div class="top"><b>Mix Shawarma</b><span class="price">$11.99</span></div>
-        <p>میکس مرغ و گوشت + سس دوگانه.</p>
-      </div>
+    <div class="card" id="about" style="margin-top:18px">
+      <h2>About Me</h2>
+      <p>
+        I’m originally from Afghanistan and currently studying in the U.S. I believe discipline and learning can change life.
+      </p>
     </div>
-  </div>
 
-  <div class="container section">
-    <div class="card" style="padding:18px">
-      <h2 style="margin:0 0 8px">سفارش سریع</h2>
-      <p class="sub" style="margin:0">برای سفارش، روی تماس یا واتساپ بزن. اگر می‌خواهی آنلاین سفارش هم می‌سازیم.</p>
+    <div class="card" id="goals" style="margin-top:18px">
+      <h2>My Goals</h2>
+      <p>🎓 Graduate strong • 💼 Build businesses • 💰 Financial freedom • 🌍 Help my family and community</p>
     </div>
-  </div>
 
-  <div class="container footer">
-    © 2026 Street Shawarma • Atlanta/Decatur • <span class="tiny">Black & Orange Theme</span>
+    <div class="card" id="contact" style="margin-top:18px">
+      <h2>Contact</h2>
+      <p>Email: yourname@email.com<br/>Instagram: @yourusername</p>
+    </div>
   </div>
 </body>
 </html>
