@@ -1,39 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سایت احمد</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Street Shawarma | Atlanta</title>
 
 <style>
-body{
-  background:#111;
-  color:white;
-  text-align:center;
-  font-family:Arial;
-  padding:60px;
+:root{
+  --bg:#000000;
+  --card:#111111;
+  --text:#ffffff;
+  --accent:#ff7a00;
+  --line:rgba(255,122,0,.4);
 }
-h1{color:orange;}
-button{
-  padding:12px 20px;
-  font-size:16px;
-  border:none;
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial;
+  background:var(--bg);
+  color:var(--text);
+  text-align:center;
+}
+
+.nav{
+  background:#000;
+  padding:15px;
+  border-bottom:2px solid var(--accent);
+  font-weight:bold;
+  font-size:20px;
+  color:var(--accent);
+}
+
+.hero{
+  padding:80px 20px;
+}
+
+h1{
+  font-size:40px;
+  color:var(--accent);
+}
+
+p{
+  font-size:18px;
+  margin-top:10px;
+  color:#ccc;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 25px;
+  background:var(--accent);
+  color:black;
+  font-weight:bold;
   border-radius:8px;
-  background:orange;
-  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#ff9500;
+  transform:scale(1.05);
+}
+
+.section{
+  padding:50px 20px;
+  background:#111;
+  border-top:1px solid var(--line);
+}
+
+.footer{
+  padding:20px;
+  background:black;
+  border-top:2px solid var(--accent);
+  color:#aaa;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>به سایت احمد خوش آمدید 👋</h1>
+<div class="nav">
+Street Shawarma 🥙
+</div>
 
-<p>این اولین ویب‌سایت من است 🚀</p>
+<div class="hero">
+<h1>به Street Shawarma خوش آمدید 🔥</h1>
+<p>شاورمای تازه، داغ و خوشمزه در Atlanta</p>
+<a href="#" class="btn">سفارش بده</a>
+</div>
 
-<button onclick="alert('تبریک! سایتت کار می‌کند 🔥')">
-کلیک کن
-</button>
+<div class="section">
+<h2 style="color:var(--accent)">منو</h2>
+<p>🥙 Chicken Shawarma</p>
+<p>🥩 Beef Shawarma</p>
+<p>🌯 Mix Shawarma</p>
+</div>
+
+<div class="footer">
+© 2026 Street Shawarma | Atlanta
+</div>
 
 </body>
 </html>
