@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ahmad Walid</title>
-  <meta name="description" content="وب‌سایت شخصی احمد ولید — داستان، هدف‌ها، و گالری عکس‌ها" />
+  <title>Ahmad Walid | Personal Site</title>
+  <meta name="description" content="وب‌سایت شخصی احمد ولید — درباره من، هدف‌ها، و گالری عکس‌ها" />
 
   <style>
     :root{
-      --bg:#07070a;
-      --card: rgba(255,255,255,.06);
+      --bg: #07070a;
+      --panel: rgba(255,255,255,.06);
       --stroke: rgba(255,255,255,.12);
       --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
+      --muted: rgba(255,255,255,.70);
       --gold: #ffd86a;
-      --gold2:#ffb300;
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --radius: 18px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
-      color:var(--text);
+      color: var(--text);
       background:
         radial-gradient(1100px 500px at 20% -10%, rgba(255,216,106,.18), transparent 60%),
         radial-gradient(900px 500px at 110% 10%, rgba(255,179,0,.10), transparent 55%),
@@ -33,10 +32,15 @@
       overflow-x:hidden;
     }
 
-    a{color:inherit; text-decoration:none}
-    .container{max-width:1050px; margin:0 auto; padding:24px 16px 60px}
+    a{ color:inherit; text-decoration:none; }
 
-    /* top nav */
+    .wrap{
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 18px 16px 60px;
+    }
+
+    /* NAV */
     .nav{
       position: sticky;
       top: 0;
@@ -46,312 +50,249 @@
       background: linear-gradient(to bottom, rgba(7,7,10,.75), rgba(7,7,10,.35));
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
-    .nav-inner{
+    .navin{
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 16px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
-      max-width:1050px;
-      margin:0 auto;
-      padding:0 16px;
+      gap: 10px;
     }
     .brand{
       display:flex; align-items:center; gap:10px;
-      font-weight:800;
-      letter-spacing:.4px;
+      font-weight: 900;
+      letter-spacing: .3px;
     }
     .badge{
-      width:38px;height:38px;border-radius:12px;
-      background: linear-gradient(135deg, rgba(255,216,106,.22), rgba(255,179,0,.10));
-      border:1px solid rgba(255,216,106,.25);
+      width:38px; height:38px; border-radius:12px;
       display:grid; place-items:center;
-      box-shadow: 0 10px 35px rgba(0,0,0,.35);
-      font-weight:900;
+      background: rgba(255,216,106,.10);
+      border: 1px solid rgba(255,216,106,.28);
       color: var(--gold);
+      box-shadow: 0 10px 35px rgba(0,0,0,.35);
     }
-    .links{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .links{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
     .links a{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
       color: var(--muted);
       font-size: 14px;
     }
-    .links a:hover{border-color: rgba(255,216,106,.35); color: var(--text)}
-    .cta{
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,216,106,.35);
-      background: linear-gradient(135deg, rgba(255,216,106,.18), rgba(255,179,0,.08));
+    .links a:hover{
+      border-color: rgba(255,216,106,.35);
       color: var(--text);
-      font-size: 14px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
     }
 
-    /* hero */
-    .hero{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:16px;
-    }
-    @media (max-width: 880px){ .hero{grid-template-columns:1fr} }
-
+    /* CARDS */
     .card{
-      background: var(--card);
+      background: var(--panel);
       border: 1px solid var(--stroke);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-    .hero-left{padding:24px}
+
+    /* HERO */
+    .hero{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .heroL{ padding: 22px; }
     .kicker{
-      display:inline-flex; gap:8px; align-items:center;
+      display:inline-flex;
+      gap:8px; align-items:center;
       padding:6px 10px;
       border-radius:999px;
       border:1px solid rgba(255,216,106,.30);
       background: rgba(255,216,106,.10);
       color: var(--gold);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
     }
     h1{
-      margin:14px 0 10px;
-      font-size: 44px;
-      line-height: 1.05;
-      letter-spacing: .2px;
+      margin: 14px 0 10px;
+      font-size: 42px;
+      line-height: 1.1;
     }
-    @media (max-width: 520px){ h1{font-size: 36px} }
+    @media (max-width: 520px){ h1{ font-size: 34px; } }
+
     .sub{
+      margin: 0;
       color: var(--muted);
-      font-size: 16px;
       line-height: 1.7;
-      margin: 0 0 14px;
+      font-size: 16px;
     }
 
-    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px}
-    .btn{
-      padding:10px 14px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      font-weight: 700;
-      font-size: 14px;
-    }
-    .btn.primary{
-      border-color: rgba(255,216,106,.35);
-      background: linear-gradient(135deg, rgba(255,216,106,.16), rgba(255,179,0,.08));
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .btn{transition: transform .18s ease, border-color .18s ease}
-
-    .stats{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-      margin-top: 16px;
-    }
-    @media (max-width: 520px){ .stats{grid-template-columns:1fr} }
-
-    .stat{
-      padding:12px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
-    }
-    .stat b{display:block; font-size: 16px}
-    .stat span{color: var(--muted); font-size: 13px}
-
-    /* profile panel */
-    .hero-right{padding:18px; display:grid; gap:12px}
+    .heroR{ padding: 18px; display:grid; gap: 12px; }
     .profile{
-      display:flex; gap:14px; align-items:center;
-      padding:14px;
+      display:flex; gap: 14px; align-items:center;
+      padding: 14px;
       border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.22);
     }
     .avatar{
-      width:86px; height:86px; border-radius: 18px;
-      border:1px solid rgba(255,216,106,.32);
-      background: rgba(255,216,106,.06);
+      width: 92px; height: 92px;
+      border-radius: 18px;
       overflow:hidden;
+      border: 1px solid rgba(255,216,106,.32);
+      background: rgba(255,216,106,.06);
       box-shadow: 0 18px 50px rgba(0,0,0,.45);
     }
-    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
-    .who h2{margin:0; font-size: 18px}
-    .who p{margin:6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5}
+    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .who h2{ margin:0; font-size: 18px; }
+    .who p{ margin:6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 
-    .mini{
-      display:grid; gap:10px;
+    .chips{
+      display:grid;
       grid-template-columns: 1fr 1fr;
+      gap: 10px;
     }
-    @media (max-width: 880px){ .mini{grid-template-columns:1fr 1fr} }
-    @media (max-width: 520px){ .mini{grid-template-columns:1fr} }
-
-    .mini .chip{
-      padding:12px;
+    @media (max-width: 520px){
+      .chips{ grid-template-columns: 1fr; }
+    }
+    .chip{
+      padding: 12px;
       border-radius: 14px;
-      border:1px solid rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
       color: var(--muted);
       font-size: 13px;
     }
 
-    /* sections */
-    .section{margin-top: 16px}
-    .section .head{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:12px; padding:16px 18px;
+    /* SECTION */
+    .section{ margin-top: 14px; }
+    .head{
+      padding: 14px 18px;
       border-bottom: 1px solid rgba(255,255,255,.08);
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
     }
-    .section h3{margin:0; font-size: 16px; letter-spacing:.2px}
-    .section small{color: var(--muted)}
+    .head h3{ margin:0; font-size: 16px; }
+    .head small{ color: var(--muted); }
+    .body{ padding: 18px; }
 
-    .section .body{padding:18px}
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:12px;
+      gap: 12px;
     }
-    @media (max-width: 880px){ .grid{grid-template-columns:1fr} }
-
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
     .tile{
-      padding:14px;
+      padding: 14px;
       border-radius: 16px;
-      border:1px solid rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.18);
     }
-    .tile h4{margin:0 0 8px; font-size: 15px}
-    .tile p{margin:0; color: var(--muted); line-height: 1.65; font-size: 14px}
+    .tile h4{ margin:0 0 8px; font-size: 15px; }
+    .tile p{ margin:0; color: var(--muted); line-height: 1.7; font-size: 14px; }
 
-    /* gallery */
+    /* GALLERY */
     .gallery{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
-    @media (max-width: 880px){ .gallery{grid-template-columns:1fr} }
-
+    @media (max-width: 900px){
+      .gallery{ grid-template-columns: 1fr; }
+    }
     .shot{
-      position:relative;
       border-radius: 18px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.2);
-      min-height: 220px;
+      min-height: 320px;
+      position: relative;
     }
-    .shot img{width:100%; height:100%; object-fit:cover; display:block; transform: scale(1.01)}
-    .shot::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(to top, rgba(0,0,0,.55), transparent 55%);
-      pointer-events:none;
-    }
-    .caption{
+    .shot img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .cap{
       position:absolute;
-      left:14px; right:14px; bottom:12px;
+      left:12px; right:12px; bottom:12px;
       display:flex; justify-content:space-between; align-items:center; gap:10px;
-      color: rgba(255,255,255,.92);
-      font-weight: 700;
+      font-weight: 800;
     }
     .tag{
-      padding:6px 10px;
+      padding: 6px 10px;
       border-radius: 999px;
-      border:1px solid rgba(255,216,106,.30);
+      border: 1px solid rgba(255,216,106,.30);
       background: rgba(255,216,106,.10);
       color: var(--gold);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     footer{
       margin-top: 18px;
-      padding: 18px 8px 0;
-      color: rgba(255,255,255,.55);
       text-align:center;
+      color: rgba(255,255,255,.55);
       font-size: 13px;
-    }
-
-    /* subtle entrance */
-    .fade-in{animation: fade .55s ease both}
-    @keyframes fade{
-      from{opacity:0; transform: translateY(10px)}
-      to{opacity:1; transform: translateY(0)}
+      padding-top: 6px;
     }
   </style>
 </head>
 
-<body id="top">
+<body>
   <div class="nav">
-    <div class="nav-inner">
+    <div class="navin">
       <div class="brand">
         <div class="badge">AW</div>
         <div>Ahmad Walid</div>
       </div>
-
       <div class="links">
         <a href="#about">درباره</a>
         <a href="#goals">هدف‌ها</a>
-        <a href="#gallery">jpg.6</a>
-        <a href="#contact" class="cta">تماس</a>
+        <a href="#gallery">عکس‌ها</a>
+        <a href="#contact">تماس</a>
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <section class="hero fade-in">
-      <div class="card hero-left">
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card heroL">
         <div class="kicker">✨ وب‌سایت شخصی من</div>
         <h1>سلام! من احمد ولید هستم 👋</h1>
         <p class="sub">
-          دانش‌آموز در آمریکا، با هدف ساختن آینده قوی. من روی رشد شخصی، درس، و ساختن نسخه بهتر از خودم کار می‌کنم.
+          دانش‌آموز در آمریکا، با هدف ساختن آینده قوی. من روی رشد شخصی، درس و مهارت‌ها کار می‌کنم.
         </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#about">شروع کنیم</a>
-          <a class="btn" href="#gallery">دیدن عکس‌ها</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <b>Mindset</b>
-            <span>هدفمند و منظم</span>
-          </div>
-          <div class="stat">
-            <b>Growth</b>
-            <span>یادگیری هر روز</span>
-          </div>
-          <div class="stat">
-            <b>Future</b>
-            <span>تمرکز روی موفقیت</span>
-          </div>
-        </div>
       </div>
 
-      <div class="card hero-right">
+      <div class="card heroR">
         <div class="profile">
           <div class="avatar">
-            <!-- عکس پروفایل: اگر خواستی عوضش کن، فقط اسم فایل را اینجا تغییر بده -->
-            <img src="3.jpg" alt="Profile photo">
+            <!-- مهم: اسم عکس تو در Repo این است: -3.jpg -->
+            <img src="-3.jpg" alt="Ahmad Walid Photo">
           </div>
           <div class="who">
             <h2>Ahmad Walid</h2>
-            <p>از افغانستان 🇦🇫 • زندگی در آمریکا 🇺🇸<br>ساختن آینده، قدم‌به‌قدم.</p>
+            <p>افغانستان 🇦🇫 → آمریکا 🇺🇸<br>قدم‌به‌قدم به سمت موفقیت.</p>
           </div>
         </div>
 
-        <div class="mini">
-          <div class="chip">⭐ علاقه‌مند به بیزنس و موفقیت</div>
-          <div class="chip">📚 تمرکز روی درس و مهارت‌ها</div>
-          <div class="chip">💪 نظم + تلاش = نتیجه</div>
-          <div class="chip">🌍 هدف: کمک به خانواده و جامعه</div>
+        <div class="chips">
+          <div class="chip">⭐ هدفمند و منظم</div>
+          <div class="chip">📚 یادگیری هر روز</div>
+          <div class="chip">💪 تلاش + صبر</div>
+          <div class="chip">🌍 آینده بهتر</div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="card section fade-in">
+    <!-- ABOUT -->
+    <section id="about" class="card section">
       <div class="head">
         <h3>درباره من</h3>
         <small>My Story</small>
@@ -362,21 +303,22 @@
             <h4>من کی هستم؟</h4>
             <p>
               من احمد ولید هستم. از افغانستان آمده‌ام و در آمریکا درس می‌خوانم.
-              دوست دارم یک زندگی قوی بسازم و هر روز بهتر از دیروز باشم.
+              هدفم این است که زندگی و آینده قوی بسازم.
             </p>
           </div>
           <div class="tile">
             <h4>چرا این سایت؟</h4>
             <p>
-              این وب‌سایت جای من است: داستانم، هدف‌هایم، و چیزهایی که دوست دارم.
-              می‌خواهم مسیرم را ثبت کنم و رشد خودم را نشان بدهم.
+              این وب‌سایت جای من است: هدف‌ها، مسیر زندگی و عکس‌ها.
+              می‌خواهم پیشرفت خودم را ثبت کنم.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="goals" class="card section fade-in">
+    <!-- GOALS -->
+    <section id="goals" class="card section">
       <div class="head">
         <h3>هدف‌ها</h3>
         <small>Goals</small>
@@ -385,49 +327,45 @@
         <div class="grid">
           <div class="tile">
             <h4>🎓 درس و آینده</h4>
-            <p>فارغ‌شدن قوی، بهتر شدن در انگلیسی، و آماده‌گی برای کالج و زندگی آینده.</p>
+            <p>فارغ‌شدن قوی، بهتر شدن در انگلیسی، و آماده‌گی برای آینده.</p>
           </div>
           <div class="tile">
             <h4>💼 موفقیت</h4>
-            <p>ساختن مسیر موفقیت با تلاش، نظم، و تصمیم‌های درست.</p>
+            <p>ساختن مسیر موفقیت با نظم، تلاش و تصمیم‌های درست.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="card section fade-in">
+    <!-- GALLERY -->
+    <section id="gallery" class="card section">
       <div class="head">
         <h3>گالری عکس‌ها</h3>
         <small>Photos</small>
       </div>
       <div class="body">
         <div class="gallery">
-          <div class="shot" style="min-height:340px">
+          <div class="shot">
             <img src="-3.jpg" alt="Photo 1">
-            <div class="caption">
+            <div class="cap">
               <div>عکس ۱</div>
               <div class="tag">-3.jpg</div>
             </div>
           </div>
 
-          <div class="shot" style="min-height:340px">
+          <div class="shot">
             <img src="-6.jpg" alt="Photo 2">
-            <div class="caption">
+            <div class="cap">
               <div>عکس ۲</div>
               <div class="tag">-6.jpg</div>
             </div>
           </div>
         </div>
-
-        <p style="margin:14px 0 0; color: var(--muted); font-size:14px; line-height:1.7;">
-          اگر عکس‌های بیشتر اضافه کردی، فقط مثل همین دو خط
-          <code style="color:var(--gold)"> &lt;img src="اسم‌عکس"&gt; </code>
-          را تکرار کن.
-        </p>
       </div>
     </section>
 
-    <section id="contact" class="card section fade-in">
+    <!-- CONTACT -->
+    <section id="contact" class="card section">
       <div class="head">
         <h3>تماس</h3>
         <small>Contact</small>
@@ -436,7 +374,7 @@
         <div class="grid">
           <div class="tile">
             <h4>📩 ایمیل</h4>
-            <p>اینجا ایمیلت را بنویس (مثلاً: ahmad@email.com)</p>
+            <p>اینجا ایمیل خودت را بنویس</p>
           </div>
           <div class="tile">
             <h4>📱 شبکه‌های اجتماعی</h4>
@@ -446,9 +384,7 @@
       </div>
     </section>
 
-    <footer>
-      © 2026 Ahmad Walid — ساخته شده با GitHub Pages
-    </footer>
+    <footer>© 2026 Ahmad Walid — ساخته شده با GitHub Pages</footer>
   </div>
 </body>
 </html>
